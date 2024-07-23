@@ -33,6 +33,9 @@ class MyApp extends StatelessWidget {
           ),
           elevation: 0.0,
         ),
+        listTileTheme: ListTileThemeData(
+          textColor: AppColors.secondary,
+        ),
         textTheme: const TextTheme(
           headlineLarge: TextStyle(color: Colors.white),
           headlineMedium: TextStyle(color: Colors.white),

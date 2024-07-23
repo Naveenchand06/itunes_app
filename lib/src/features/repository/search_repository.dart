@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -30,12 +31,15 @@ class SearchNotifier extends StateNotifier<AppResponse<SearchResponse>> {
     try {
       final Response res =
           await _searchService.search(term: term, tag: tag, limit: limit);
-      log(res.data.toString());
       state = state.copyWith(
-        result: SearchResponse.fromJson(res.data),
+        result: SearchResponse.fromJson(
+            (jsonDecode(res.data) as Map<String, dynamic>)),
         isLoading: false,
+        error: null,
       );
-    } catch (e) {
+    } catch (e, stack) {
+      log('Search error iss --> $stack');
+
       log('Search error is --> $e');
       state = state.copyWith(
           isLoading: false,

@@ -32,7 +32,6 @@ class LoadingScreen {
     required BuildContext context,
     required String text,
   }) {
-    /// Getting the state from the closest instance of this class that encloses the given context.
     final state = Overlay.of(context);
     // if (state == null) {
     //   return null;
@@ -58,7 +57,7 @@ class LoadingScreen {
                 minWidth: size.width * 0.5,
               ),
               decoration: BoxDecoration(
-                color: AppColors.tagField,
+                color: AppColors.field,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Padding(
@@ -69,7 +68,10 @@ class LoadingScreen {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(height: 20),
-                      const CupertinoActivityIndicator(),
+                      const CupertinoActivityIndicator(
+                        radius: 20.0,
+                        color: AppColors.secondary,
+                      ),
                       const SizedBox(height: 20),
                       StreamBuilder(
                         stream: textController.stream,

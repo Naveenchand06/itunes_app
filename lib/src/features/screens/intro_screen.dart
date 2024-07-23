@@ -87,11 +87,14 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
               AppButton(
                 title: AppStrings.submit,
                 onPress: () {
-                  ref.read(searchNotifierProvider.notifier).search(
-                      term: _searchController.text.trim(),
-                      tag: _selectedtags.join(","));
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const HomeScreen()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(
+                        term: _searchController.text.trim(),
+                        tag: _selectedtags.join(","),
+                      ),
+                    ),
+                  );
                 },
               )
             ],
