@@ -5,7 +5,7 @@ import 'package:itunes_app/src/constants/app_colors.dart';
 class AppTextField extends StatelessWidget {
   const AppTextField({
     this.hint,
-    this.controller,
+    required this.controller,
     this.inputformatters,
     this.onChange,
     this.onSubmit,
@@ -19,7 +19,7 @@ class AppTextField extends StatelessWidget {
   });
 
   final String? hint;
-  final TextEditingController? controller;
+  final TextEditingController controller;
   final List<TextInputFormatter>? inputformatters;
   final Function(String)? onChange;
   final Function(String)? onSubmit;

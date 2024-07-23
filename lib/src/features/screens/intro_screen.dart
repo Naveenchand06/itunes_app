@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:itunes_app/src/constants/app_colors.dart';
 import 'package:itunes_app/src/constants/app_strings.dart';
+import 'package:itunes_app/src/features/repository/search_repository.dart';
+import 'package:itunes_app/src/features/screens/home_screen.dart';
 import 'package:itunes_app/src/features/screens/tag_screen.dart';
 import 'package:itunes_app/src/widgets/app_button.dart';
 import 'package:itunes_app/src/widgets/app_tag.dart';
 import 'package:itunes_app/src/widgets/app_text_field.dart';
 
-class IntroScreen extends StatefulWidget {
+class IntroScreen extends ConsumerStatefulWidget {
   const IntroScreen({super.key});
 
   @override
-  State<IntroScreen> createState() => _IntroScreenState();
+  ConsumerState<IntroScreen> createState() => _IntroScreenState();
 }
 
-class _IntroScreenState extends State<IntroScreen> {
+class _IntroScreenState extends ConsumerState<IntroScreen> {
   List<String> _selectedtags = [];
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +44,9 @@ class _IntroScreenState extends State<IntroScreen> {
               ),
               const SizedBox(height: 30.0),
               // * Search Field
-              const AppTextField(),
+              AppTextField(
+                controller: _searchController,
+              ),
               // * Search Tags
               const SizedBox(height: 20.0),
               Text(
@@ -74,7 +86,13 @@ class _IntroScreenState extends State<IntroScreen> {
               // * Submit Button
               AppButton(
                 title: AppStrings.submit,
-                onPress: () {},
+                onPress: () {
+                  ref.read(searchNotifierProvider.notifier).search(
+                      term: _searchController.text.trim(),
+                      tag: _selectedtags.join(","));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HomeScreen()));
+                },
               )
             ],
           ),
