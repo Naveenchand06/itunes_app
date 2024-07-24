@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:itunes_app/src/constants/app_strings.dart';
 import 'package:itunes_app/src/features/models/search_response.dart';
@@ -50,9 +50,8 @@ class SearchNotifier extends StateNotifier<AppResponse<SearchResponse>> {
         error: null,
       );
     } catch (e, stack) {
-      log('Search error iss --> $stack');
-
-      log('Search error is --> $e');
+      debugPrint('Search error iss --> $stack');
+      debugPrint('Search error is --> $e');
       state = state.copyWith(
           isLoading: false,
           error: const AppErrorModel(

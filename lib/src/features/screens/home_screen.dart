@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:itunes_app/src/constants/app_colors.dart';
-import 'package:itunes_app/src/extensions/string_extensions.dart';
 import 'package:itunes_app/src/features/models/search_response.dart';
 import 'package:itunes_app/src/features/repository/search_repository.dart';
 import 'package:itunes_app/src/features/screens/detail_screen.dart';

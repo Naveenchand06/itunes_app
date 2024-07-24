@@ -1,6 +1,5 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http_certificate_pinning/http_certificate_pinning.dart';
 
 class DioHelper {
@@ -32,7 +31,7 @@ class DioHelper {
 class LoggingInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    log('REQUEST => ${options.uri}');
+    debugPrint('REQUEST => ${options.uri}');
 
     super.onRequest(options, handler);
   }

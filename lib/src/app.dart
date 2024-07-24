@@ -15,38 +15,22 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _checkForRooted();
-    });
-    super.initState();
-  }
-
-  void _checkForRooted() async {
-    try {
-      final result = await RootDetector.isRooted(ignoreSimulator: true);
-    } catch (e) {
-      debugPrint(e.toString());
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return FutureBuilder<bool>(
       future: RootDetector.isRooted(ignoreSimulator: true),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
-            return const Center(
-              child: CupertinoActivityIndicator(
+            return appScreenCover(
+              body: const CupertinoActivityIndicator(
                 color: AppColors.secondary,
                 radius: 32.0,
               ),
             );
           case ConnectionState.done:
             if (snapshot.data == true) {
-              return const Center(
-                child: AppErrorWidget(
+              return appScreenCover(
+                body: const AppErrorWidget(
                   appError: AppErrorModel(errorMessage: "Mobile is rooted!"),
                 ),
               );
@@ -57,6 +41,14 @@ class _AppState extends State<App> {
             return const IntroScreen();
         }
       },
+    );
+  }
+
+  Widget appScreenCover({required Widget body}) {
+    return Scaffold(
+      body: Center(
+        child: body,
+      ),
     );
   }
 }

@@ -226,11 +226,14 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                                         child: VideoPlayer(_controller),
                                       )
                                     : Container(),
-                                Icon(
-                                  CupertinoIcons.play_arrow,
-                                  color: AppColors.secondary.withOpacity(0.5),
-                                  size: 80.0,
-                                ),
+                                _isPlaying
+                                    ? const SizedBox.shrink()
+                                    : Icon(
+                                        CupertinoIcons.play_arrow,
+                                        color: AppColors.secondary
+                                            .withOpacity(0.5),
+                                        size: 80.0,
+                                      ),
                               ],
                             ),
                     ),
