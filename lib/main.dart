@@ -3,6 +3,9 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:itunes_app/src/app.dart";
 import "package:itunes_app/src/constants/app_colors.dart";
 
+// * SSL HASH - 8317efefe33594d2b38a267bbfc690ed0e4a14a8bd44aa3efa9db1eecde19677
+// SHA256 - 52:BD:C3:ED:42:F3:A2:33:E3:63:12:D8:56:70:62:50:03:DF:56:08:17:DF:D3:FC:DE:07:14:71:CA:30:91:49
+
 void main() {
   runApp(
     const ProviderScope(

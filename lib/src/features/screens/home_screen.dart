@@ -95,6 +95,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         // * List of Items for that Category
                         ListView.builder(
                           shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
                           itemCount: category.results.length,
                           itemBuilder: (context, index) {
                             final item = category.results[index];
@@ -131,7 +132,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                         Wrap(
                                           children: [
                                             SizedBox(
-                                              width: 300.0,
+                                              width: 250.0,
                                               child: Text(item.trackName,
                                                   overflow:
                                                       TextOverflow.ellipsis,

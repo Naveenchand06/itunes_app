@@ -9,6 +9,8 @@ class AppStrings {
   static const description = "Description";
   static const media = 'Media';
   static const preview = "Preview";
+  static const tapToPlay = "Tap to preview the song";
+
   static const mediaTypeParams = [
     "Album",
     "Movieartist",
