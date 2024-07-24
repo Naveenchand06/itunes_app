@@ -1,12 +1,62 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:itunes_app/src/constants/app_colors.dart';
 import 'package:itunes_app/src/features/screens/intro_screen.dart';
+import 'package:itunes_app/src/network/models/app_error.dart';
+import 'package:itunes_app/src/widgets/app_error_widget.dart';
+import 'package:root_detector/root_detector.dart';
 
-
-class App extends StatelessWidget {
+class App extends StatefulWidget {
   const App({super.key});
 
   @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkForRooted();
+    });
+    super.initState();
+  }
+
+  void _checkForRooted() async {
+    try {
+      final result = await RootDetector.isRooted(ignoreSimulator: true);
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const IntroScreen();
+    return FutureBuilder<bool>(
+      future: RootDetector.isRooted(ignoreSimulator: true),
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.waiting:
+            return const Center(
+              child: CupertinoActivityIndicator(
+                color: AppColors.secondary,
+                radius: 32.0,
+              ),
+            );
+          case ConnectionState.done:
+            if (snapshot.data == true) {
+              return const Center(
+                child: AppErrorWidget(
+                  appError: AppErrorModel(errorMessage: "Mobile is rooted!"),
+                ),
+              );
+            } else {
+              return const IntroScreen();
+            }
+          default:
+            return const IntroScreen();
+        }
+      },
+    );
   }
 }
