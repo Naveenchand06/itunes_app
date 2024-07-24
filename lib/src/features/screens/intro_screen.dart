@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:itunes_app/src/constants/app_colors.dart';
 import 'package:itunes_app/src/constants/app_strings.dart';
-import 'package:itunes_app/src/features/repository/search_repository.dart';
 import 'package:itunes_app/src/features/screens/home_screen.dart';
 import 'package:itunes_app/src/features/screens/tag_screen.dart';
 import 'package:itunes_app/src/widgets/app_button.dart';
@@ -91,7 +90,10 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
                     MaterialPageRoute(
                       builder: (context) => HomeScreen(
                         term: _searchController.text.trim(),
-                        tag: _selectedtags.join(","),
+                        tag: _selectedtags
+                            .map((item) => item.toLowerCase())
+                            .toList()
+                            .join(","),
                       ),
                     ),
                   );

@@ -1,5 +1,5 @@
-class SearchResponse {
-  SearchResponse({
+class AllSearchResponse {
+  AllSearchResponse({
     required this.resultCount,
     required this.results,
   });
@@ -7,14 +7,34 @@ class SearchResponse {
   final int resultCount;
   final List<Result> results;
 
-  factory SearchResponse.fromJson(Map<String, dynamic> json) {
-    return SearchResponse(
+  factory AllSearchResponse.fromJson(Map<String, dynamic> json) {
+    return AllSearchResponse(
       resultCount: json["resultCount"] ?? 0,
       results: json["results"] == null
           ? []
           : List<Result>.from(json["results"]!.map((x) => Result.fromJson(x))),
     );
   }
+}
+
+class SearchResponse {
+  final int resultCount;
+  final List<CategoryResult> categoryResults;
+
+  SearchResponse({
+    required this.resultCount,
+    required this.categoryResults,
+  });
+}
+
+class CategoryResult {
+  final String category;
+  final List<Result> results;
+
+  CategoryResult({
+    required this.category,
+    required this.results,
+  });
 }
 
 class Result {

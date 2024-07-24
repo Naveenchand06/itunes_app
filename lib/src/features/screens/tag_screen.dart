@@ -40,7 +40,7 @@ class _TagScreenState extends ConsumerState<TagScreen> {
         title: const Text('Media'),
       ),
       body: ListView.separated(
-        itemCount: AppStrings.mediaType.length,
+        itemCount: AppStrings.mediaTypeParams.length,
         separatorBuilder: (context, index) {
           return Divider(
             color: AppColors.secondary.withOpacity(0.3),
@@ -49,18 +49,18 @@ class _TagScreenState extends ConsumerState<TagScreen> {
         itemBuilder: (context, index) {
           return ListTile(
             onTap: () {
-              if (_selectedTags.contains(AppStrings.mediaType[index])) {
-                _selectedTags.remove(AppStrings.mediaType[index]);
+              if (_selectedTags.contains(AppStrings.mediaTypeParams[index])) {
+                _selectedTags.remove(AppStrings.mediaTypeParams[index]);
               } else {
-                _selectedTags.add(AppStrings.mediaType[index]);
+                _selectedTags.add(AppStrings.mediaTypeParams[index]);
               }
               setState(() {});
             },
             title: Text(
-              AppStrings.mediaType[index],
+              AppStrings.mediaTypeParams[index],
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            trailing: _selectedTags.contains(AppStrings.mediaType[index])
+            trailing: _selectedTags.contains(AppStrings.mediaTypeParams[index])
                 ? const Icon(
                     Icons.check,
                     color: AppColors.secondary,

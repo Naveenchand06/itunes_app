@@ -8,6 +8,7 @@ class SearchService {
     required int limit,
   }) async {
     try {
+      DioHelper().dio.interceptors.add(LoggingInterceptor());
       final response = await DioHelper().dio.get(
             "/search?term=$term&entity=$tag&limit=$limit",
           );

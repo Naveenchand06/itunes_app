@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           ),
           elevation: 0.0,
         ),
-        listTileTheme: ListTileThemeData(
+        listTileTheme: const ListTileThemeData(
           textColor: AppColors.secondary,
         ),
         textTheme: const TextTheme(

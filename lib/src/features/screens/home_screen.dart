@@ -1,12 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:itunes_app/src/constants/app_colors.dart';
+import 'package:itunes_app/src/extensions/string_extensions.dart';
 import 'package:itunes_app/src/features/models/search_response.dart';
 import 'package:itunes_app/src/features/repository/search_repository.dart';
 import 'package:itunes_app/src/network/models/app_response.dart';
 import 'package:itunes_app/src/utils/loading/loading_screen.dart';
 import 'package:itunes_app/src/widgets/app_error_widget.dart';
+import 'package:itunes_app/src/widgets/section_title.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({
@@ -80,15 +81,79 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           return const SizedBox.shrink();
         } else if (searchValue.result != null) {
           // * Success Response
-          return ListView.builder(
-            itemCount: searchValue.result?.resultCount ?? 0,
-            itemBuilder: (context, index) {
-              final item = searchValue.result!.results[index];
-              return ListTile(
-                title: Text(item.trackName),
-                subtitle: Text(item.artistName),
-              );
-            },
+          final allCategory = searchValue.result!.categoryResults;
+          return SingleChildScrollView(
+            child: Column(
+              children: allCategory.map(
+                (category) {
+                  if (category.results.isNotEmpty) {
+                    // * Media type title
+                    return Column(
+                      children: [
+                        SectionTitle(title: category.category),
+                        // * List of Items for that Category
+                        ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: category.results.length,
+                          itemBuilder: (context, index) {
+                            final item = category.results[index];
+                            return Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20.0,
+                                vertical: 12.0,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  SizedBox(
+                                    height: 130.0,
+                                    width: 90.0,
+                                    child: Image.network(
+                                      item.artworkUrl100,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12.0),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Wrap(
+                                        children: [
+                                          SizedBox(
+                                            width: 300.0,
+                                            child: Text(item.trackName,
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 2,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyMedium),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 4.0),
+                                      Text(item.artistName,
+                                          overflow: TextOverflow.clip,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    );
+                  } else {
+                    return const SizedBox.shrink();
+                  }
+                },
+              ).toList(),
+            ),
           );
         } else {
           return const SizedBox.shrink();

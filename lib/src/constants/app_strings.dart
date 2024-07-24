@@ -8,7 +8,7 @@ class AppStrings {
   static const listLayout = "List Layout";
   static const description = "Description";
   static const media = 'Media';
-  static const mediaType = [
+  static const mediaTypeParams = [
     "Album",
     "Movieartist",
     "Ebook",
@@ -16,5 +16,16 @@ class AppStrings {
     "Musicvideo",
     "Podcast",
     "Song"
+  ];
+
+  static const mediaTypes = [
+    "book",
+    "album",
+    "feature-movie",
+    "music-video",
+    "podcast",
+    "podcast-episode",
+    "song",
+    "artist",
   ];
 }
