@@ -8,6 +8,7 @@ class AppStrings {
   static const listLayout = "List Layout";
   static const description = "Description";
   static const media = 'Media';
+  static const preview = "Preview";
   static const mediaTypeParams = [
     "Album",
     "Movieartist",

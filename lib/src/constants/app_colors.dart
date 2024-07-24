@@ -8,4 +8,6 @@ class AppColors {
   static const Color tag = Color(0xff808080);
   static const Color tagField = Color(0xff1c1c1e);
   static const Color error = Colors.redAccent;
+  static const Color alert = Colors.orangeAccent;
+  static const Color link = Colors.blue;
 }

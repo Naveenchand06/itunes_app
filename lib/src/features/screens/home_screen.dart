@@ -4,6 +4,7 @@ import 'package:itunes_app/src/constants/app_colors.dart';
 import 'package:itunes_app/src/extensions/string_extensions.dart';
 import 'package:itunes_app/src/features/models/search_response.dart';
 import 'package:itunes_app/src/features/repository/search_repository.dart';
+import 'package:itunes_app/src/features/screens/detail_screen.dart';
 import 'package:itunes_app/src/network/models/app_response.dart';
 import 'package:itunes_app/src/utils/loading/loading_screen.dart';
 import 'package:itunes_app/src/widgets/app_error_widget.dart';
@@ -97,51 +98,60 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           itemCount: category.results.length,
                           itemBuilder: (context, index) {
                             final item = category.results[index];
-                            return Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20.0,
-                                vertical: 12.0,
-                              ),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  SizedBox(
-                                    height: 130.0,
-                                    width: 90.0,
-                                    child: Image.network(
-                                      item.artworkUrl100,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  const SizedBox(width: 12.0),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Wrap(
-                                        children: [
-                                          SizedBox(
-                                            width: 300.0,
-                                            child: Text(item.trackName,
-                                                overflow: TextOverflow.ellipsis,
-                                                maxLines: 2,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .bodyMedium),
-                                          ),
-                                        ],
+                            return InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>
+                                        DetailScreen(details: item)));
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0,
+                                  vertical: 12.0,
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    SizedBox(
+                                      height: 130.0,
+                                      width: 90.0,
+                                      child: Image.network(
+                                        item.artworkUrl100,
+                                        fit: BoxFit.cover,
                                       ),
-                                      const SizedBox(height: 4.0),
-                                      Text(item.artistName,
-                                          overflow: TextOverflow.clip,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyMedium),
-                                    ],
-                                  )
-                                ],
+                                    ),
+                                    const SizedBox(width: 12.0),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Wrap(
+                                          children: [
+                                            SizedBox(
+                                              width: 300.0,
+                                              child: Text(item.trackName,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  maxLines: 2,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodyMedium),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 4.0),
+                                        Text(item.artistName,
+                                            overflow: TextOverflow.clip,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyMedium),
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ),
                             );
                           },
