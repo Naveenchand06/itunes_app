@@ -2,11 +2,11 @@
 
 <img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/app_icon.png" width="250" height="250">
 
-    • Developed using 🌟 Flutter 🌟 for a smooth and engaging user experience
-    • Utilizes Riverpod for efficient state management ⚙️
-    • Enhanced security with 🛡️ `Root Detection` and `SSL pinning`
-    • Fetches search results from the iTunes API 🎧
-    • Features a beautifully designed Home Screen with: Grid view 🏠 and List view 📋
+- Developed using 🌟 Flutter 🌟 for a smooth and engaging user experience
+- Utilizes Riverpod for efficient state management ⚙️
+- Enhanced security with 🛡️ `Root Detection` and `SSL pinning`
+- Fetches search results from the iTunes API 🎧
+- Features a beautifully designed Home Screen with: Grid view 🏠 and List view 📋
 
 ## Getting Started
 
