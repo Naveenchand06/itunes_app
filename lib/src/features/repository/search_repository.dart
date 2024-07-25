@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'package:collection/collection.dart';
+// ignore: depend_on_referenced_packages
+import 'package:collection/collection.dart' show groupBy;
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

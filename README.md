@@ -1,6 +1,10 @@
-# itunes_app
+# 🎵 iTunes App 🎵
 
-A new Flutter project.
+    - Developed using 🌟 Flutter 🌟 for a smooth and engaging user experience
+    - Utilizes Riverpod for efficient state management ⚙️
+    - Enhanced security with 🛡️ root detection and SSL pinning
+    - Fetches search results from the iTunes API 🎧
+    - Features a beautifully designed Home Screen with: Grid view 🏠 and List view 📋
 
 ## Getting Started
 
@@ -14,3 +18,5 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Screenshots

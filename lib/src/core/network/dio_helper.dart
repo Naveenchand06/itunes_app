@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:http_certificate_pinning/http_certificate_pinning.dart';
 import 'package:itunes_app/src/core/security/app_ssl_pinning.dart';
 
 class DioHelper {
