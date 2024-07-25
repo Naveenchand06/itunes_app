@@ -4,7 +4,7 @@
 
     • Developed using 🌟 Flutter 🌟 for a smooth and engaging user experience
     • Utilizes Riverpod for efficient state management ⚙️
-    • Enhanced security with 🛡️ root detection and SSL pinning
+    • Enhanced security with 🛡️ `Root Detection` and `SSL pinning`
     • Fetches search results from the iTunes API 🎧
     • Features a beautifully designed Home Screen with: Grid view 🏠 and List view 📋
 
