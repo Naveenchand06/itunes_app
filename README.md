@@ -24,7 +24,7 @@ samples, guidance on mobile development, and a full API reference.
 <p float="left">
 <img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/intro.jpeg" width="250" height="500">
 <img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/loading.jpeg" width="250" height="500">
-<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/rooted.jpeg" width="250" height="500">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/rooted.png" width="250" height="500">
 
 </p>
 
