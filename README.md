@@ -1,5 +1,7 @@
 # 🎵 iTunes App 🎵
 
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/app_icon.png" width="250" height="250">
+
     • Developed using 🌟 Flutter 🌟 for a smooth and engaging user experience
     • Utilizes Riverpod for efficient state management ⚙️
     • Enhanced security with 🛡️ root detection and SSL pinning
@@ -30,7 +32,6 @@ samples, guidance on mobile development, and a full API reference.
 
 <p float="left">
 <img src="https://raw.githubusercontent.com/Naveenchand06/itunes_app/main/assets/showcase/media-type.jpeg" width="250" height="500">
-
 <img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/home-grid.jpeg" width="250" height="500">
 <img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/home-list.jpeg" width="250" height="500">
 </p>
@@ -46,3 +47,15 @@ samples, guidance on mobile development, and a full API reference.
 <img src="https://raw.githubusercontent.com/Naveenchand06/itunes_app/main/assets/showcase/list.jpeg" width="250" height="500">
 <img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/edsheeran-3.jpeg" width="250" height="500">
 </p>
+
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://naveen.tv/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naveenchand06/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Naveenchand0606)
+
+## Downlods
+
+Click [here](https://github.com/Naveenchand06/itunes_app/raw/main/assets/apk/itunes-apk.apk) to download `APK`
+
+<!-- Click [here](https://github.com/Naveenchand06/itunes_app/releases/download/v1-release/app-arm64-v1-release.apk) to download `arm64` APK -->
