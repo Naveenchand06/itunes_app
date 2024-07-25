@@ -16,7 +16,8 @@ dependencies:
   dio: ^5.5.0+1
   video_player: ^2.9.1
   url_launcher: ^6.3.0
-  root_detector: ^0.0.6
+  # root_detector: ^0.0.6
+  jailbreak_root_detection: ^1.1.5
   toggle_switch: ^2.3.0
 
 dev_dependencies:

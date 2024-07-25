@@ -4,7 +4,7 @@ import 'package:itunes_app/src/constants/app_colors.dart';
 import 'package:itunes_app/src/features/screens/intro_screen.dart';
 import 'package:itunes_app/src/core/network/models/app_error.dart';
 import 'package:itunes_app/src/widgets/app_error_widget.dart';
-import 'package:root_detector/root_detector.dart';
+import 'package:jailbreak_root_detection/jailbreak_root_detection.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -17,7 +17,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<bool>(
-      future: RootDetector.isRooted(ignoreSimulator: true),
+      future: JailbreakRootDetection.instance.isNotTrust,
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
