@@ -56,6 +56,8 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Downlods
 
+Click [here](https://github.com/Naveenchand06/itunes_app/releases/tag/v1.0.0) to view details of the release
+
 Click [here](https://github.com/Naveenchand06/itunes_app/raw/main/assets/apk/itunes-apk.apk) to download `APK`
 
 <!-- Click [here](https://github.com/Naveenchand06/itunes_app/releases/download/v1-release/app-arm64-v1-release.apk) to download `arm64` APK -->
