@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:itunes_app/src/constants/app_strings.dart';
 import 'package:itunes_app/src/features/models/search_response.dart';
 import 'package:itunes_app/src/features/services/search_service.dart';
-import 'package:itunes_app/src/network/models/app_error.dart';
-import 'package:itunes_app/src/network/models/app_response.dart';
+import 'package:itunes_app/src/core/network/models/app_error.dart';
+import 'package:itunes_app/src/core/network/models/app_response.dart';
 
 // * ================ Search Notifier Provider =======================
 

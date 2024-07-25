@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:itunes_app/src/constants/app_colors.dart';
 import 'package:itunes_app/src/features/screens/intro_screen.dart';
-import 'package:itunes_app/src/network/models/app_error.dart';
+import 'package:itunes_app/src/core/network/models/app_error.dart';
 import 'package:itunes_app/src/widgets/app_error_widget.dart';
 import 'package:root_detector/root_detector.dart';
 

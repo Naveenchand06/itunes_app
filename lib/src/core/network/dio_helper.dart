@@ -1,23 +1,29 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http_certificate_pinning/http_certificate_pinning.dart';
+import 'package:itunes_app/src/core/security/app_ssl_pinning.dart';
 
 class DioHelper {
-  static final DioHelper _instance = DioHelper._internal();
+  static final DioHelper instance = DioHelper._internal();
 
   factory DioHelper() {
-    _instance.dio.interceptors.add(LoggingInterceptor());
-    // _instance.dio.interceptors.add(
-    //   CertificatePinningInterceptor(
-    //     allowedSHAFingerprints: [
-    //       "8317efefe33594d2b38a267bbfc690ed0e4a14a8bd44aa3efa9db1eecde19677"
-    //     ],
-    //   ),
-    // );
-    return _instance;
+    instance.dio.interceptors.add(LoggingInterceptor());
+
+    return instance;
   }
 
   DioHelper._internal();
+
+  static Future<DioHelper> getInstance() async {
+    final httpClient = await createSecureHttpClient();
+    final dio = instance.dio;
+    dio.httpClientAdapter =
+        IOHttpClientAdapter(createHttpClient: () => httpClient);
+    return instance;
+  }
 
   final Dio dio = Dio(
     BaseOptions(

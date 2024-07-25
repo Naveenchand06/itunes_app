@@ -1,4 +1,4 @@
-import 'package:itunes_app/src/network/models/app_error.dart';
+import 'package:itunes_app/src/core/network/models/app_error.dart';
 
 class AppResponse<T> {
   final T? result;

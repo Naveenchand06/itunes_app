@@ -5,7 +5,7 @@ import 'package:itunes_app/src/constants/app_strings.dart';
 import 'package:itunes_app/src/features/models/search_response.dart';
 import 'package:itunes_app/src/features/repository/search_repository.dart';
 import 'package:itunes_app/src/features/screens/detail_screen.dart';
-import 'package:itunes_app/src/network/models/app_response.dart';
+import 'package:itunes_app/src/core/network/models/app_response.dart';
 import 'package:itunes_app/src/utils/loading/loading_screen.dart';
 import 'package:itunes_app/src/widgets/app_error_widget.dart';
 import 'package:itunes_app/src/widgets/section_title.dart';
