@@ -20,3 +20,29 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Screenshots
+
+<p float="left">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/intro.jpeg" width="250" height="500">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/loading.jpeg" width="250" height="500">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/rooted.jpeg" width="250" height="500">
+
+</p>
+
+<p float="left">
+<img src="https://raw.githubusercontent.com/Naveenchand06/itunes_app/main/assets/showcase/media-type.jpeg" width="250" height="500">
+
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/home-grid.jpeg" width="250" height="500">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/home-list.jpeg" width="250" height="500">
+</p>
+
+<p float="left">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/edsheeran-1.jpeg" width="250" height="500">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/edsheeran-2.jpeg" width="250" height="500">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/edsheeran-3.jpeg" width="250" height="500">
+</p>
+
+<p float="left">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/edsheeran-song.jpeg" width="250" height="500">
+<img src="https://raw.githubusercontent.com/Naveenchand06/itunes_app/main/assets/showcase/list.jpeg" width="250" height="500">
+<img src="https://github.com/Naveenchand06/itunes_app/raw/main/assets/showcase/edsheeran-3.jpeg" width="250" height="500">
+</p>
